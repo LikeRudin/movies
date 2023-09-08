@@ -1,0 +1,9 @@
+.Home ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row
+}
+
+.Home li {
+    width: 50%;
+}
