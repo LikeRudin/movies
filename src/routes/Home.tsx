@@ -1,40 +1,38 @@
 import { useEffect, useState } from "react";
-
-interface Movie {
-  id: number;
-  name: string;
-  thumbnail: {
-    path: string,
-    extension: string
-  }
-}
+import { getMovies } from "../apis/getMovies";
+import Movie from "../components/Movie";
+import { MovieData } from "../type";
+import { Link } from "react-router-dom";
+import styles from "./Home.mudule.css";
 
 const Home =() => {
   const [isLoading, setIsLoading] = useState(true);
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const getMovies = async () => {
-    const json = await( await fetch(
-      `https://marvel-proxy.nomadcoders.workers.dev/v1/public/characters?limit=50&orderBy=modified&series=24229,1058,2023`
-    )).json();
-    setMovies(json.data.results);
-    console.log(json.data.results);
-    setIsLoading( false);
-  }
+  const [movies, setMovies] = useState<MovieData[]>([]);
   useEffect(() => {
-    getMovies();}, []);
+    (async() => {
+      const data = await getMovies()
+      setMovies(data);
+      setIsLoading(false);
+    })();
+  }, []);
 
   return (
-      <div>{isLoading? <h1>loading...</h1> 
-                      : movies.map(movie =>{
-                        const {id, name, thumbnail: {path, extension}} = movie;
-                        return (<li key ={id}>
-                          {name} 
-                          <br/>
-                          <img src={`${path}.${extension}`}/>
-                          </li>
-                          )
-                        })
-                        }</div>)
-                      }
+    <div className={styles.Home}>
+      {isLoading? <h1>loading...</h1> 
+    : 
+    <ul> {movies.map(movie => {
+      const {id, name, thumbnail} = movie;
+      return (
+        <li key={id}>
+          <div><Movie name={name} thumbnail={thumbnail} />
+          <Link to={`/movies/${id}`} state={{movie}}> Meet {name} </Link>
+          </div>
+        </li>
+          )})}
+          </ul>
+          }
+    </div>
+  )
+}
 
 export default Home;
