@@ -1,0 +1,17 @@
+.Movie {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    white-space: nowrap;
+    text-align: center;
+  }
+  
+  .Movie h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .Movie img {
+    width: 20%;
+    height: auto; 
+  }
