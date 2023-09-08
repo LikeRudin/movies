@@ -1,3 +1,5 @@
+export type TabKind = "description" | "comics" | "series"
+
 export interface MovieData {
     id: number;
     name: string;
@@ -5,12 +7,21 @@ export interface MovieData {
     modified: string;
     resourceURI: string;
     urls: object;
-    comics: string[];
-    stories: string[];
-    events: [];
-    series: [];
+    comics: {
+        items?: ItemsWithName[] | undefined;
+      };
+      series: {
+        items?: ItemsWithName[] | undefined;
+      };
+    stories: objects;
+    events: object;
     thumbnail: {
       path: string,
       extension: string
     }
+  }
+
+
+export interface ItemsWithName {
+    name:string
   }
