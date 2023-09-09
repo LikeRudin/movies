@@ -6,7 +6,7 @@ import Tab from "../components/Tab";
 import TabDetail from "../components/TabDetail";
 import LoadingDetail from "../components/LoadingDetail";
 import styles from "./Detail.module.css";
-import Movie from "../components/Movie";
+import ProfileImage from "../components/ProfileImage";
 const Detail = () => {
     const { state:{ thumbnail, name} } = useLocation();
     const {characterId } = useParams();
@@ -40,7 +40,7 @@ const Detail = () => {
                         Back to Home
                     </Link>
                     <div className={styles.Movie}>
-                        <Movie thumbnail={thumbnail} name={name}/>
+                        <ProfileImage thumbnail={thumbnail} name={name}/>
                     </div>
                 </div>
                 <div className={styles.info}>

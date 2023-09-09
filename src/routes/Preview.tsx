@@ -1,7 +1,7 @@
 import { useLocation,Link } from "react-router-dom";
 import { MovieData } from "../type";
 import {useState} from "react";
-import Movie from "../components/Movie";
+import ProfileImage from "../components/ProfileImage";
 import Tab from "../components/Tab";
 import TabPreview from "../components/TabPreview";
 import { TabKind } from "../type";
@@ -20,7 +20,7 @@ const Preview = () => {
     return (
         <><div className={styles.container}>
             <div className={styles.Movie}>
-              <Movie name={name} thumbnail={thumbnail}/>
+              <ProfileImage name={name} thumbnail={thumbnail}/>
             </div>
             <div className={styles.info}>
               <ul className={styles.nav}>

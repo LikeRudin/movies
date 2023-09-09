@@ -1,6 +1,6 @@
-import styles from './Movie.module.css';
+import styles from './ProfileImage.module.css';
 
-interface MovieProps {
+interface ProfileImageProps {
     name: string;
     thumbnail: {
         path: string,
@@ -8,16 +8,17 @@ interface MovieProps {
       }
 }
 
-const Movie = ({ name, thumbnail}: MovieProps) =>{
+const ProfileImage = ({ name, thumbnail}: ProfileImageProps) =>{
     const {path, extension} = thumbnail; 
     return (
         <div className={styles.container}   > 
             <div className={styles.imagebox}>
                 <img src={`${path}.${extension}`}/>
+                <h1>{name}</h1>
             </div>
-            <h1>{name}</h1>
+
         </div>
     )
 };
 
-export default Movie;
+export default ProfileImage;
