@@ -3,7 +3,7 @@ import { getDetails } from "../apis/getDetails";
 import { useParams, useLocation, Link} from "react-router-dom";
 import { DetailElements, DetailTabKind, TabKind} from "../type";
 import Tab from "../components/Tab";
-import TabDetail from "../components/TabDetail";
+import ContentBoxList from "../components/ContentBoxList";
 import LoadingDetail from "../components/LoadingDetail";
 import styles from "./Detail.module.css";
 import ProfileImage from "../components/ProfileImage";
@@ -50,7 +50,7 @@ const Detail = () => {
                         <Tab tabName="events" activeTab={activeTab} handleTabChange={handleTabChange} />
                     </ul>
                     <div className={styles.table}>
-                        <TabDetail
+                        <ContentBoxList
                             activeTab={activeTab as DetailTabKind}
                             details={details}
                         />

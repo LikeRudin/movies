@@ -1,19 +1,19 @@
 import { DetailElements, DetailTabKind} from "../type";
 import ContentBox from "./ContentBox";
-import styles from "./TabDetail.module.css";
+import styles from "./ContentBoxList.module.css";
 
-interface TabDetailProps {
+interface ContentBoxListProps {
   activeTab: DetailTabKind;
   details: DetailElements;
 }
 
-const TabDetail = ({ activeTab, details }: TabDetailProps) => {
+const ContentBoxList = ({ activeTab, details }: ContentBoxListProps) => {
     const innerContents = details[activeTab];
     return (
         <><ul className={styles.container}>
-        {innerContents.map(item => {
-            const {title, description, thumbnail, urls} = item;
-            return (
+            {innerContents.map(item => {
+                const {title, description, thumbnail, urls} = item;
+                return (
                 <ContentBox title={title} description={description} thumbnail={thumbnail} urls={urls}/> 
                 )
             })
@@ -22,4 +22,4 @@ const TabDetail = ({ activeTab, details }: TabDetailProps) => {
         </>
 )};
 
-export default TabDetail;
+export default ContentBoxList;
