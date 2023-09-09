@@ -29,7 +29,7 @@ const ContentBox = ({title, urls, description, thumbnail}: DetailElement) => {
                     const {type, url} = item;
                     return (<li>
                                 <div className={styles.linkList}>
-                                    <a href={`${url}`}>{`${type}`}</a>
+                                    <a href={`${url}`} target="_blank">{`${type}`}</a>
                                 </div>
                             </li>)
                     })

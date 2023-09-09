@@ -48,7 +48,7 @@ const PreviewContent = ({ activeTab, description, comics, series, urls }: Previe
             const {type, url} = item; 
             return (<li key={index}>
                       <div className={Styles.outerLink}>
-                        <a href={url}>{type}</a>
+                        <a href={url} target="_blank">{type}</a>
                       </div>
                     </li>)
                   })
