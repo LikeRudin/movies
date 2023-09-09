@@ -1,7 +1,7 @@
 import { TabKind, ItemsWithName, UrlElement } from "../type";
-import Styles from "./TabPreview.module.css";
+import Styles from "./PreviewContent.module.css";
 
-interface TabPreviewProps {
+interface PreviewContentProps {
   activeTab: TabKind;
   description: string;
   comics: {
@@ -14,8 +14,8 @@ interface TabPreviewProps {
   
 }
 
-const TabPreview = ({ activeTab, description, comics, series, urls }: TabPreviewProps) => {
-    if (activeTab === "description") {TabPreview
+const PreviewContent = ({ activeTab, description, comics, series, urls }: PreviewContentProps) => {
+    if (activeTab === "description") {
       return (
         <div className={Styles.container}>
           {description ? <p>{description}</p> : <p>some villain took description!</p>}
@@ -58,4 +58,4 @@ const TabPreview = ({ activeTab, description, comics, series, urls }: TabPreview
     }
   };
 
-export default TabPreview;
+export default PreviewContent;

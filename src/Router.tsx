@@ -20,6 +20,7 @@ const Router = createBrowserRouter([
     {
         path: 'character/:characterId',
         element: <Detail />,
+        errorElement: <ErrorPage />
     }
 ])
 

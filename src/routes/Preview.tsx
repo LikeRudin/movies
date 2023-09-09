@@ -3,7 +3,7 @@ import { MovieData, TabKind } from "../type";
 import {useState} from "react";
 import ProfileImage from "../components/ProfileImage";
 import Tab from "../components/Tab";
-import TabPreview from "../components/TabPreview";
+import PreviewContent from "../components/PreviewContent";
 import styles from "./Preview.module.css";
 
 const Preview = () => {
@@ -29,7 +29,7 @@ const Preview = () => {
                 <Tab tabName="urls" activeTab={activeTab} handleTabChange={handleTabChange} />
               </ul>
               <div className={styles.table}>
-                <TabPreview
+                <PreviewContent
                   activeTab={activeTab}
                   description={description}
                   comics={comics}
