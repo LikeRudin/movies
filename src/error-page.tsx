@@ -22,17 +22,18 @@ const ErrorPage = () => {
   };
 
   const childDivStyle = {
-    width: `33%`
+    width: `33%`,
   }
 
   return (
+    <>
     <div id="error-page" style={divStyle as React.CSSProperties}>
       <div style={childDivStyle}>
           <img src="/404.png" style={imgStyle}/>
       </div>
       <div style={childDivStyle}>
           <h1>Oh~ NO!</h1>
-          <p>Unexpected {error.name} Occured!</p>
+          <p>Unexpected {`${error.name}`} Occured!</p>
           <p>
               <i>{error.statusText} {error.message}</i>
           </p>
@@ -41,6 +42,10 @@ const ErrorPage = () => {
         <img src="/4042.png" style={imgStyle} />
       </div>
     </div>
+    <h1>
+    "illustrations were drawn by Ddoza."
+    </h1>
+    </>
   );
 }
 

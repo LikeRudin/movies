@@ -1,0 +1,62 @@
+
+
+.container{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.left {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.homeButton {
+    position:fixed;
+    top: 10%;
+}
+.Movie{
+    position:relative;
+    margin-top: 10%;
+    margin-left: 8%;
+    width:15%;
+    height: auto;
+    position:fixed;
+}
+
+
+
+
+
+.info{
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.nav {
+    position:fixed;
+    right: 10px;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: x-large;
+    margin: 10px;
+}
+
+.table {
+    margin-top: 10%;
+    width: 75%;
+    align-self: flex-end;
+    overflow-y: auto;  
+}
+.table::-webkit-scrollbar{
+    display: none;  
+}
+

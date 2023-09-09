@@ -1,38 +1,67 @@
-import { useLocation } from "react-router-dom";
-import { MovieData } from "../type";
-import {useState} from "react";
-import Movie from "../components/Movie";
+import { useEffect, useState } from "react";
+import { getDetails } from "../apis/getDetails";
+import { useParams, useLocation, Link} from "react-router-dom";
+import { DetailElements, DetailTabKind, TabKind} from "../type";
 import Tab from "../components/Tab";
-import TabContent from "../components/TabContent";
-import { TabKind } from "../type";
-
+import TabDetail from "../components/TabDetail";
+import LoadingDetail from "../components/LoadingDetail";
+import styles from "./Detail.module.css";
+import Movie from "../components/Movie";
 const Detail = () => {
-    const location = useLocation();
-    const { name, thumbnail, comics, series, description } = location.state.movie as MovieData;
+    const { state:{ thumbnail, name} } = useLocation();
+    const {characterId } = useParams();
+    const [details, setDetails] = useState({} as DetailElements);
+    const [activeTab, setActiveTab] = useState<DetailTabKind>("comics");
+
+    const [isLoading, setIsLoading] = useState(true);
+    const handleTabChange = (tabName:DetailTabKind | TabKind) => {
+        setActiveTab(tabName as DetailTabKind);
+      };
   
-    const [activeTab, setActiveTab] = useState<TabKind>("description");
-  
-    const handleTabChange = (tabName:TabKind) => {
-      setActiveTab(tabName);
-    };
-    return (
-        <>
-          <Movie name={name} thumbnail={thumbnail}/>
-          <div>
-            <ul>
-              <Tab tabName="description" activeTab={activeTab} handleTabChange={handleTabChange} />
-              <Tab tabName="comics" activeTab={activeTab} handleTabChange={handleTabChange} />
-              <Tab tabName="series" activeTab={activeTab} handleTabChange={handleTabChange} />
-            </ul>
-            <TabContent
-              activeTab={activeTab}
-              description={description}
-              comics={comics}
-              series={series}
-            />
-          </div>
+
+    useEffect(() => {
+        (async() => {
+            
+            const characterData = await getDetails(characterId  as string);
+            setDetails(characterData);
+            setIsLoading(false);
+            console.log(characterData);
+        })();
+    },[characterId ]);
+    
+    return(<>
+        <div className={styles.screen}>
+            {isLoading? (
+            <LoadingDetail thumbnail={thumbnail} name={name}/>
+            )
+            :(<div className={styles.container}>
+                <div className={styles.left}>
+                                    <Link to={`/`} className={styles.homeButton}>
+                        Back to Home
+                    </Link>
+                    <div className={styles.Movie}>
+                        <Movie thumbnail={thumbnail} name={name}/>
+                    </div>
+                </div>
+                <div className={styles.info}>
+                    <ul className={styles.nav}>
+                        <Tab tabName="comics" activeTab={activeTab} handleTabChange={handleTabChange} />
+                        <Tab tabName="series" activeTab={activeTab} handleTabChange={handleTabChange} />
+                        <Tab tabName="events" activeTab={activeTab} handleTabChange={handleTabChange} />
+                    </ul>
+                    <div className={styles.table}>
+                        <TabDetail
+                            activeTab={activeTab as DetailTabKind}
+                            details={details}
+                        />
+                    </div>
+                </div>
+           </div>
+           )
+           }
+        </div>
         </>
-      );
-    };
-  
-  export default Detail;
+    )
+}
+
+export default Detail;

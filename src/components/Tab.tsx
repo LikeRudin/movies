@@ -1,9 +1,11 @@
-import { TabKind } from "../type";
+import { DetailTabKind, TabKind } from "../type";
+import Styles from "./Tab.module.css";
 
+type AllTabKinds = TabKind | DetailTabKind;
 interface TabProps {
-    tabName: TabKind;
-    activeTab: TabKind;
-    handleTabChange: (tabName: TabKind) => void;
+    tabName: AllTabKinds;
+    activeTab: AllTabKinds;
+    handleTabChange: (tabName: TabKind | DetailTabKind) => void;
 }
 
 const Tab = ({ tabName, activeTab, handleTabChange }: TabProps) => {
@@ -12,7 +14,7 @@ const Tab = ({ tabName, activeTab, handleTabChange }: TabProps) => {
         className={activeTab === tabName ? "active" : ""}
         onClick={() => handleTabChange(tabName)}
       >
-        {tabName}
+        <div className={activeTab === tabName ? Styles.active: Styles.inactive}>{tabName}</div>
       </li>
     );
   };

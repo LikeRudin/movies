@@ -1,17 +1,20 @@
-.Movie {
+.container {
     display: flex;
     flex-direction: column;
     margin-right: 20px;
-    white-space: nowrap;
+    white-space: normal;
     text-align: center;
-  }
-  
-  .Movie h3 {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  
-  .Movie img {
-    width: 20%;
-    height: auto; 
-  }
+    font-size: large;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+
+.imagebox {
+    width: 50vh;
+    height: auto;
+}
+
+.imagebox > img {
+    width: 100%;
+    border-radius: 10px;
+}

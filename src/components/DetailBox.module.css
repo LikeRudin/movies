@@ -1,0 +1,75 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+    white-space: nowrap;
+    text-align: center;
+    border: brown 3.5px solid;
+}
+
+.imageBox{
+    width: 20vh;
+    height: auto;
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: solid blue 3px;
+    margin-left: 3px;
+}
+.ImageBox > div {
+    width: 100%;
+    height: auto;
+    text-align: center;
+
+}
+.imageBox > img {
+    width: 40vh;
+    height: auto;
+}
+
+.descriptionBox{
+    width: 40vh;
+    height: 100%;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.description{
+    width: 100%;
+    height: auto;
+    white-space: normal;
+    text-align: center;
+    font-size: x-small;
+}
+
+.urlBox{
+    width:20%;
+    height: auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.linkList { 
+    background-color: brown;
+    border-radius: 5px;
+    margin: 20px;
+    width: 80%;
+    height: auto;
+    font-size: large;
+}
+
+.title {
+    position: relative;
+    top: 5px;
+    right: 5px;
+    font-size: large;
+}

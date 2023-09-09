@@ -1,4 +1,6 @@
-export type TabKind = "description" | "comics" | "series"
+export type TabKind = "description" | "comics" | "series" | "urls" | "events"
+export type DetailTabKind = "comics" | "series" | "events"
+
 
 export interface MovieData {
     id: number;
@@ -6,7 +8,7 @@ export interface MovieData {
     description: string;
     modified: string;
     resourceURI: string;
-    urls: object;
+    urls: UrlElement[];
     comics: {
         items?: ItemsWithName[] | undefined;
       };
@@ -24,4 +26,28 @@ export interface MovieData {
 
 export interface ItemsWithName {
     name:string
+  }
+
+export interface UrlElement {
+    type: string;
+    url: string;
+}
+
+export interface DetailElements {
+    events: DetailElement[];
+    comics: DetailElement[];
+    series: DetailElement[];
+}
+
+export interface DetailElement {
+    thumbnail: {
+      extension: string;
+      path: string;
+    };
+    title: string;
+    urls: {
+      type: string;
+      url: string;
+    }[];
+    description: string;
   }
