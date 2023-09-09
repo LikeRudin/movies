@@ -24,6 +24,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	width: 100dvw;
 	line-height: 1;
 	background-color: #121212;
 	color: aliceblue;
