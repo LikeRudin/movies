@@ -15,20 +15,22 @@ const ErrorPage = () => {
     <>
     <div id="error-page" className={styles.container}>
       <div className={styles.childDiv}>
-          <img src="/404.png" className={styles.imgStyle}/>
+          <img src="/404.png" className={styles.errorImage}/>
       </div>
-      <div className={styles.errorImage}>
+      <div className={styles.childDiv}>
           <h1>Oh~ NO!</h1>
           <p>Unexpected {`${error.name}`} Occured!</p>
+          <br/>
           <p>
               <i>{error.statusText} {error.message}</i>
           </p>
-          <Link to={`/`}>
-                        Press to Go to Home
+          <br/>
+          <Link to={`/`} className={styles.routeButton}>
+                        Press to Go Home
                     </Link>
       </div>
       <div className={styles.childDiv}>
-        <img src="/4042.png" className={styles.imgStyle} />
+        <img src="/4042.png" className={styles.errorImage} />
       </div>
     </div>
     <h1>
