@@ -1,8 +1,8 @@
 import { DetailElement } from "../type";
-import styles from "./DetailBox.module.css";
+import styles from "./ContentBox.module.css";
  
 
-const DetailBox = ({title, urls, description, thumbnail}: DetailElement) => {
+const ContentBox = ({title, urls, description, thumbnail}: DetailElement) => {
 
     return (<>
         <div className={styles.container}>
@@ -44,4 +44,4 @@ const DetailBox = ({title, urls, description, thumbnail}: DetailElement) => {
 
 }
 
-export default DetailBox;
+export default ContentBox;

@@ -1,10 +1,9 @@
 import { useLocation,Link } from "react-router-dom";
-import { MovieData } from "../type";
+import { MovieData, TabKind } from "../type";
 import {useState} from "react";
 import ProfileImage from "../components/ProfileImage";
 import Tab from "../components/Tab";
 import TabPreview from "../components/TabPreview";
-import { TabKind } from "../type";
 import styles from "./Preview.module.css";
 
 const Preview = () => {

@@ -1,5 +1,5 @@
 import { DetailElements, DetailTabKind} from "../type";
-import DetailBox from "./DetailBox";
+import ContentBox from "./ContentBox";
 import styles from "./TabDetail.module.css";
 
 interface TabDetailProps {
@@ -14,7 +14,7 @@ const TabDetail = ({ activeTab, details }: TabDetailProps) => {
         {innerContents.map(item => {
             const {title, description, thumbnail, urls} = item;
             return (
-                <DetailBox title={title} description={description} thumbnail={thumbnail} urls={urls}/> 
+                <ContentBox title={title} description={description} thumbnail={thumbnail} urls={urls}/> 
                 )
             })
             }
