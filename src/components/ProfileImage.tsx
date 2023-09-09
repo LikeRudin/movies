@@ -9,14 +9,13 @@ interface ProfileImageProps {
 }
 
 const ProfileImage = ({ name, thumbnail}: ProfileImageProps) =>{
-    const {path, extension} = thumbnail; 
+    
     return (
         <div className={styles.container}   > 
             <div className={styles.imagebox}>
-                <img src={`${path}.${extension}`}/>
+                {thumbnail? <img src={`${thumbnail.path}.${thumbnail.extension}`}/>: null}
                 <h1>{name}</h1>
             </div>
-
         </div>
     )
 };
