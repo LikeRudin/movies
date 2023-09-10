@@ -1,10 +1,10 @@
-import { DetailElements, DetailTabKind} from "../type";
+import { ContentBoxElements, DetailTabKind} from "../type";
 import ContentBox from "./ContentBox";
 import styles from "./ContentBoxList.module.css";
 
 interface ContentBoxListProps {
   activeTab: DetailTabKind;
-  details: DetailElements;
+  details: ContentBoxElements;
 }
 
 const ContentBoxList = ({ activeTab, details }: ContentBoxListProps) => {
