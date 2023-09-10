@@ -7,14 +7,14 @@
 }
 
 .inactive:hover{
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: bolder;
     color: aquamarine
 
 }
 
 li {
-    font-size: large;
+    font-size: larger;
     font-weight: bold;
     cursor:none;
     cursor: pointer;

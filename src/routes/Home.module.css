@@ -11,13 +11,20 @@
 
 .linklist {
     max-height: 90vh;
-    overflow-y: auto;  
+    overflow-y: auto;
+    white-space: normal;
+}
+
+.heroName{
+    font-size: 1.5rem;
+    white-space: normal;
 }
 
 .heroName:hover {
     color: tomato;
-    font-size: larger;
+    font-size: x-large;
     font-weight: bold;
+    
 }
 .linklist::-webkit-scrollbar{
     display: none;  

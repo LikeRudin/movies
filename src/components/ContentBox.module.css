@@ -39,6 +39,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: xx-large;
+    white-space: normal;
 }
 
 .description{
@@ -46,7 +48,7 @@
     height: auto;
     white-space: normal;
     text-align: center;
-    font-size: x-small;
+    font-size: 1rem;
 }
 
 .urlBox{
@@ -56,6 +58,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 2rem;
+    white-space: normal
 }
 
 .linkList { 
@@ -64,7 +68,6 @@
     margin: 20px;
     width: 80%;
     height: auto;
-    font-size: large;
 }
 
 .title {
