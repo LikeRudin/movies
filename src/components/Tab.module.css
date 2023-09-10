@@ -5,3 +5,18 @@
 .inactive {
     color: aliceblue;
 }
+
+.inactive:hover{
+    font-size: x-large;
+    font-weight: bolder;
+    color: aquamarine
+
+}
+
+li {
+    font-size: large;
+    font-weight: bold;
+    cursor:none;
+    cursor: pointer;
+}
+
