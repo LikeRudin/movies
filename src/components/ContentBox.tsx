@@ -1,8 +1,18 @@
-import { DetailElement } from "../type";
 import styles from "./ContentBox.module.css";
+import { MovieData, UrlElement } from "../type";
+
+interface ContentBoxProps extends Partial<MovieData> {
+    thumbnail: {
+      extension: string;
+      path: string;
+    };
+    title: string;
+    urls: UrlElement[];
+    description: string;
+}
  
 
-const ContentBox = ({title, urls, description, thumbnail}: DetailElement) => {
+const ContentBox = ({title, urls, description, thumbnail}: ContentBoxProps) => {
 
     return (<>
         <div className={styles.container}>

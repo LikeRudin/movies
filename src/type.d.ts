@@ -33,21 +33,9 @@ export interface UrlElement {
     url: string;
 }
 
-export interface DetailElements {
+export interface ContentBoxElements {
     events: DetailElement[];
     comics: DetailElement[];
     series: DetailElement[];
 }
 
-export interface DetailElement {
-    thumbnail: {
-      extension: string;
-      path: string;
-    };
-    title: string;
-    urls: {
-      type: string;
-      url: string;
-    }[];
-    description: string;
-  }
