@@ -32,6 +32,9 @@
     overflow-y: auto; 
     font-size: 1.5rem;
 }
+.table::-webkit-scrollbar{
+    display: none;
+}
 
 .Detail--Tabs > li {
     margin: 10%;
