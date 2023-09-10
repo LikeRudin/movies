@@ -35,3 +35,20 @@
     height: 80%;
     border: brown solid 5px;
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        display:flex;
+        flex-direction: column;
+    }
+  
+    .linklist {
+      flex: 0 0 30%; 
+      order: 2; 
+    }
+  
+    .nestedpage {
+      flex: 0 0 60%; 
+      order: 1; 
+    }
+  }
