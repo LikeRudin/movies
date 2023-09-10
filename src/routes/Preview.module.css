@@ -64,9 +64,22 @@
 
 @media screen and (max-width: 768px) {
     .nav {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        grid-gap: 5px;
-        top: 5px;
+       right:20%;
+       font-size: 1rem;
+       top: 5%;
+    }
+    .table {
+        top: 25%;
+        right: 10%;
+        width: 60%;
+        height: 50%;
+        overflow-y: auto; 
+        font-size: 1.5rem;
+    }
+
+    .Movie {
+        width:15%;
+        height:auto;
+        white-space: normal;
     }
 }
