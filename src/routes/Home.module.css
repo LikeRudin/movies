@@ -13,6 +13,12 @@
     max-height: 90vh;
     overflow-y: auto;  
 }
+
+.heroName:hover {
+    color: tomato;
+    font-size: larger;
+    font-weight: bold;
+}
 .linklist::-webkit-scrollbar{
     display: none;  
 }

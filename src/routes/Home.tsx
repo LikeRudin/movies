@@ -24,7 +24,7 @@ const Home =() => {
         <ul> {movies.map(movie => {
           const {id, name} = movie;
           return (
-          <li key={id}>
+          <li key={id} className={styles.heroName}>
             <Link to={`/movies/${id}`} state={{movie}}>{name} </Link>
             </li>
             )})}
