@@ -8,6 +8,7 @@
 .info {
     width: 60%;
     height:auto;
+    white-space: normal;
 
 }
 
@@ -20,6 +21,7 @@
     flex-direction: row;
     justify-content: space-between;
     font-size: 1.8rem;
+    white-space: normal;
 }
 .Movie {
     width: 40%;
@@ -35,8 +37,12 @@
 .table::-webkit-scrollbar{
     display: none;
 }
-
+.Detail--Tabs{
+    white-space: normal;
+}
 .Detail--Tabs > li {
+    white-space: normal;
+    font-size:2rem;
     margin: 10%;
 }
 
@@ -54,4 +60,13 @@
     height: auto;
     background-color: blue;
     margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-gap: 5px;
+        top: 5px;
+    }
 }
