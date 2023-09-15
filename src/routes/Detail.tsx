@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getDetails } from "../apis/getDetails";
 import { useParams, useLocation, Link} from "react-router-dom";
-import { DetailElements, DetailTabKind, TabKind} from "../type";
+import { DetailTabKind, TabKind ,ContentBoxElements} from "../type";
 import Tab from "../components/Tab";
 import ContentBoxList from "../components/ContentBoxList";
 import LoadingDetail from "../components/LoadingDetail";
@@ -10,7 +10,7 @@ import ProfileImage from "../components/ProfileImage";
 const Detail = () => {
     const { state:{ thumbnail, name} } = useLocation();
     const {characterId } = useParams();
-    const [details, setDetails] = useState({} as DetailElements);
+    const [details, setDetails] = useState({} as ContentBoxElements);
     const [activeTab, setActiveTab] = useState<DetailTabKind>("comics");
 
     const [isLoading, setIsLoading] = useState(true);
